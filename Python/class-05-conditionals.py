@@ -1,15 +1,30 @@
+has_cnh = False
+
+if has_cnh:
+  print("Você pode dirigir")
+else:
+  print("Você não pode dirigir")
+
+
+# age = int(input("Digite sua idade: "))
+
+# if age < 16:
+#   print("Não pode votar")
+# elif age >= 16 and age < 18 or age > 70:
+#   print("Voto facultativo")
+# elif age >= 18 and age <= 70:
+#   print("Voto obrigatório")
+
+
 # Challenge Average
-# Com base no array abaixo, imprima o nome do aluno e se ele foi aprovado ou reprovado com média maior ou igual a 7:
-students_average_array = [
-  { "name": "Pedro", "grade1": 5, "grade2": 8},
-  { "name": "Ana", "grade1": 6.5, "grade2": 7},
-  { "name": "Beatriz", "grade1": 8, "grade2": 10},
-]
+# Sabendo que a média do colégio é 7, crie um programa que receba as notas do aluno e verifique se foi aprovado ou reprovado. Imprima a média e a situação dele:
 
-average1 = calc_avg(students_average_array[0]["grade1"], students_average_array[0]["grade2"])
-average2 = calc_avg(students_average_array[1]["grade1"], students_average_array[1]["grade2"])
-average3 = calc_avg(students_average_array[2]["grade1"], students_average_array[2]["grade2"])
+grade1 = float(input("Digite a primeira nota 1: "))
+grade2 = float(input("Digite a primeira nota 2: "))
 
-print(f"{students_average_array[0]['name']} tem média igual a {average1}")
-print(f"{students_average_array[1]['name']} tem média igual a {average2}")
-print(f"{students_average_array[2]['name']} tem média igual a {average3}")
+avg = (grade1 + grade2) / 2
+
+if avg >= 7:
+  print(f"Aluno aprovado com média {avg}")
+else:
+  print(f"Aluno reprovado com média {avg:.2f}")
