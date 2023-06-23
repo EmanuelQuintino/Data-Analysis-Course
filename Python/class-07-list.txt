@@ -1,8 +1,0 @@
-dado
-carro
-teia
-bola
-casa
-laptop
-nuvem
-avião
