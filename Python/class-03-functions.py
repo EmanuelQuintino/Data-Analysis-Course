@@ -21,7 +21,6 @@ print(student1_average)
 student2_average = calc_avg(6, 7)
 print(student2_average)
 
-
 # Challenge IMC
 # Crie uma função que receba peso e altura dos pacientes e calcule seu IMC:
 def calc_imc(height, weight):

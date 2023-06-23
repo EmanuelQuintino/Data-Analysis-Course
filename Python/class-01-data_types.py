@@ -28,7 +28,6 @@ is_admin = True #boolean
 # print(new_height)
 # print(type(new_height))
 
-
 # Collections 
 
 list = ["string", 2, True, [2, "Três"]]
@@ -43,7 +42,6 @@ list[2] = False
 # print(list)
 # print(len(list))
 
-
 tuple = ("string", 2, True, [2, "Três"])
 # tuple = ("cpf", "123.123.123-12", 12312312312)
 
@@ -56,13 +54,11 @@ tuple = ("string", 2, True, [2, "Três"])
 # print(tuple)
 # print(len(tuple))
 
-
 set = {"Violão", "Guitarra", "Bateria"}
 set.add("Baixo")
 # set.remove("Violão")
 set.pop()
 # print(set)
-
 
 dict = {
   "name":"Emanuel",

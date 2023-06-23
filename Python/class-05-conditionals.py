@@ -5,7 +5,6 @@ if has_cnh:
 else:
   print("Você não pode dirigir")
 
-
 # age = int(input("Digite sua idade: "))
 
 # if age < 16:
@@ -27,7 +26,6 @@ else:
 #   print("Erro na operação...")
 # finally:
 #   print("Fim da operação!")
-
 
 # Challenge Average
 # Sabendo que a média do colégio é 7, crie um programa que receba as notas do aluno e verifique se foi aprovado ou reprovado. Imprima a média e a situação dele:

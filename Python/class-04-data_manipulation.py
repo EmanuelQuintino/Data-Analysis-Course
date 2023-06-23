@@ -1,5 +1,4 @@
 # Strings 
-
 name = 'Emanuel\' Quintino'
 
 text = """row 1 
@@ -21,7 +20,6 @@ text = "row 1 \nrow 2 \nrow 3"
 # print("Emanuel" in name)
 
 # print(text)
-
 
 # Arrays
 array_names = ["Ana", "João", "Letícia"]

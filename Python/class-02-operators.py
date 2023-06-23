@@ -24,7 +24,6 @@ sum = num1 + num2
 
 print(f"A soma de {num1} e {num2} é {sum}")
 
-
 # Assignment
 # Comparison
 # Logical
