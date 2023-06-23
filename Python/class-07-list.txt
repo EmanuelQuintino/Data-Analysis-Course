@@ -1,0 +1,9 @@
+dado
+carro
+teia
+bola
+casa
+laptop
+nuvem
+avi�o
+avião
