@@ -5,5 +5,4 @@ bola
 casa
 laptop
 nuvem
-avi�o
 avião
