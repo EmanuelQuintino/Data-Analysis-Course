@@ -15,12 +15,25 @@ else:
 # elif age >= 18 and age <= 70:
 #   print("Voto obrigatório")
 
+# try:
+#   num1 = float(input("Número 1: "))
+#   num2 = float(input("Número 2: "))
+#   print(num1/num2)
+# except ValueError:
+#   print("Insira um valor válido")
+# except ZeroDivisionError:
+#   print("Número não pode ser dividido por zero")
+# except:
+#   print("Erro na operação...")
+# finally:
+#   print("Fim da operação!")
+
 
 # Challenge Average
 # Sabendo que a média do colégio é 7, crie um programa que receba as notas do aluno e verifique se foi aprovado ou reprovado. Imprima a média e a situação dele:
 
-grade1 = float(input("Digite a primeira nota 1: "))
-grade2 = float(input("Digite a primeira nota 2: "))
+grade1 = float(input("Nota 1: "))
+grade2 = float(input("Nota 2: "))
 
 avg = (grade1 + grade2) / 2
 
