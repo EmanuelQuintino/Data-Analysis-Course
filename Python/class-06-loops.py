@@ -10,7 +10,7 @@ for i in range(5, 11, 2):
 
 # list_names = ["Pedro", "João", "Carla", "Clara"]
 # for name in list_names:
-  # print(name)
+#   print(name)
 
 array = [
   ["A", "B", "C"],
