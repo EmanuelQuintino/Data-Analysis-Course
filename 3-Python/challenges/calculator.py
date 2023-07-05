@@ -7,14 +7,18 @@ num2 = float(input("Digite o segundo número: "))
 operation = input("Digite a operação (+, -, /, *): ")
 
 if operation == "+":
-  print(f"A soma de {num1} e {num2} é {num1 + num2}")
+  result = num1 + num2
+  print(f"A soma de {num1} e {num2} é {result}")
 
 if operation == "-":
-  print(f"A subtração de {num1} e {num2} é {num1 - num2}")
+  result = num1 - num2
+  print(f"A subtração de {num1} e {num2} é {result}")
 
 if operation == "*":
-  print(f"A multiplicação de {num1} e {num2} é {num1 * num2}")
+  result = num1 * num2
+  print(f"A multiplicação de {num1} e {num2} é {result}")
 
 if operation == "/":
-  print(f"A divisão de {num1} e {num2} é {(num1 / num2):.2f}")
+  result = num1 / num2
+  print(f"A divisão de {num1} e {num2} é {result:.2f}")
   
