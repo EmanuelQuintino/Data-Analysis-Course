@@ -9,8 +9,8 @@ name1, name2 = "Test1", "test2"
 
 name1 = name2 = "Test1"
 
-print(name1)
-print(name2)
+print(name1 * 3)
+print(name2[::-1])
 
 # Primitive Types
 
