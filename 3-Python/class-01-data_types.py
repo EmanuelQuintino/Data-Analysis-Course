@@ -1,3 +1,17 @@
+# Variables
+
+name1 = "Test1"
+name2 = "Test2"
+name2 = name1
+
+name1, name2 = "Test1", "test2"
+name1, name2 = "Test1", "test2"
+
+name1 = name2 = "Test1"
+
+print(name1)
+print(name2)
+
 # Primitive Types
 
 name = "Emanuel" #string 
