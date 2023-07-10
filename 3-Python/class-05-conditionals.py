@@ -1,11 +1,14 @@
-has_cnh = False
+# Conditionals
 
-if has_cnh:
+age = 18
+# age = int(input("Digite sua idade: "))
+
+has_cnh = True
+
+if age >= 18 and has_cnh:
   print("Você pode dirigir")
 else:
   print("Você não pode dirigir")
-
-# age = int(input("Digite sua idade: "))
 
 # if age < 16:
 #   print("Não pode votar")
