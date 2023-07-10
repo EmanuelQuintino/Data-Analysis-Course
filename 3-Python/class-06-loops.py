@@ -7,9 +7,9 @@ import time
 start_time = time.time()
 
 i = 1
-while i <= 10000:
-  print(i)
-  i += 1
+# while i <= 10000:
+#   print(i)
+#   i += 1
 
 end_time = time.time()
 print(end_time - start_time)
@@ -26,8 +26,8 @@ print(end_time - start_time)
 #   print(array_numbers[i - 1])
 #   i += 1
 
-# for i in range(10000):
-#   print(i)
+for i in range(1, 10, 2):
+  print(i)
 
 # for i in array_numbers:
 #   print(i)
