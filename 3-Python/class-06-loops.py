@@ -1,11 +1,18 @@
+import time
+
 # Loops
 
-array_numbers = [1, 2, 3, 4, 5]
+# array_numbers = [1, 2, 3, 4, 5]
 
-# i = 1
-# while i <= 5:
-#   print(i)
-#   i += 1
+start_time = time.time()
+
+i = 1
+while i <= 10000:
+  print(i)
+  i += 1
+
+end_time = time.time()
+print(end_time - start_time)
 
 # i = 0
 # while i < 5:
@@ -19,7 +26,7 @@ array_numbers = [1, 2, 3, 4, 5]
 #   print(array_numbers[i - 1])
 #   i += 1
 
-# for i in range(1, 6, 2):
+# for i in range(10000):
 #   print(i)
 
 # for i in array_numbers:
