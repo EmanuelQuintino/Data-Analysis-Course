@@ -25,6 +25,17 @@ sum = num1 + num2
 
 # print(f"A soma de {num1} e {num2} é {sum}")
 
+# Assignment
+num = 3
+num += 2
+# num -= 2
+# num *= 2
+# num /= 2
+# num %= 2
+# num **= 2
+# num //= 2
+print(num)
+
 # Comparison
 
 # print(5 == 5)
@@ -49,7 +60,7 @@ sum = num1 + num2
 
 # print(not True)
 
-print(2 == 2 and 3 == 3)
-print(2 != 2 and 3 == 3)
-print(2 != 2 or 3 == 3)
-print(2 != 2 or not 3 == 3)
+# print(2 == 2 and 3 == 3)
+# print(2 != 2 and 3 == 3)
+# print(2 != 2 or 3 == 3)
+# print(2 != 2 or not 3 == 3)
