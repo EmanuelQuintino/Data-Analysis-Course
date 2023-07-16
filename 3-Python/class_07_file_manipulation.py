@@ -1,13 +1,15 @@
 # File Manipulation
+
 # "r" - read
 # "w" - write
 # "a" - append
 
-import os
-
-# file = open("3-Python/files/object_list.txt", "r", encoding='utf-8')
+file = open("3-Python/files/object_list.txt", "r", encoding='utf-8')
 # file2 = open("3-Python/files/object_list2.txt", "w", encoding='utf-8')
 # file2 = open("3-Python/files/object_list2.txt", "a", encoding='utf-8')
+
+with open("3-Python/files/object_list.txt", "r", encoding='utf-8') as file:
+  print(file.read())
 
 # print(file.read())
 # print(file.tell())
@@ -38,7 +40,8 @@ import os
 # file.close()
 # file2.close()
 
-# os.remove("Python/files/object_list2.txt")
+import os
+# os.remove("3-Python/files/object_list2.txt")
 
 # Exercise
 # employees = open("3-Python/files/employee_salaries.csv", "r", encoding='utf-8')
@@ -62,10 +65,10 @@ import os
 
 # employees.close()
 
-import pandas as pd
+# import pandas as pd
 
-employees = "3-Python/files/employee_salaries.csv"
-dataset = pd.read_csv(employees)
+# employees = "3-Python/files/employee_salaries.csv"
+# dataset = pd.read_csv(employees)
 
-print(dataset)
-print(dataset.info())
+# print(dataset)
+# print(dataset.info())
