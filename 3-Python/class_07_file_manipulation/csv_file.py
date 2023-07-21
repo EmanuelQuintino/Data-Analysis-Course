@@ -1,21 +1,21 @@
 import csv
 
-dados = [
-  ['Name', 'Age', 'City'],
-  ['João', 25, 'São Paulo'],
-  ['Maria', 30, 'Rio de Janeiro'],
-  ['Pedro', 35, 'Belo Horizonte'],
-  ['Ana', 28, 'Brasília'],
+data = [
+  ["Name", "Age", "City"],
+  ["João", 25, "São Paulo"],
+  ["Maria", 30, "Rio de Janeiro"],
+  ["Pedro", 35, "Belo Horizonte"],
+  ["Ana", 28, "Brasília"],
 ]
 
-file_path = '3-Python/files/studants.csv'
-with open(file_path, 'w', newline='\n', encoding='utf-8') as file_csv:
-  writer = csv.writer(file_csv)
-  for linha in dados:
-    writer.writerow(linha)
+file_path = "3-Python/files/students.csv"
+with open(file_path, "w", newline="\n", encoding="utf-8") as file:
+  writer = csv.writer(file)
+  for row in data:
+    writer.writerow(row)
 
-with open(file_path, encoding='utf-8', newline="\n") as file_csv:
-  reader = csv.reader(file_csv)
+with open(file_path, "r", encoding="utf-8", newline="\n") as file:
+  reader = csv.reader(file)
   data = list(reader)
   print(data)
 
