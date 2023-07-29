@@ -1,0 +1,7 @@
+carro
+casa
+pião
+dado
+bola
+banana
+laranja
