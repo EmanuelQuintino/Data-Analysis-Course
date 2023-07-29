@@ -1,3 +1,4 @@
+from hangman_draw import hangman_drawings 
 from os import name, system 
 import random
 
@@ -7,7 +8,7 @@ def clear_screen():
   else:
     system("clear")
 
-words= ["banana", "maçã"]
+words= ["banana", "laranja"]
 word = random.choice(words)
 hide_word = ["_" for i in word]
 letters = []
@@ -15,18 +16,21 @@ chances = 6
 
 while True:
   print("Bem-vindo ao jogo da forca!")
+  print(hangman_drawings[::-1][chances])
   print("\b")
+  print(f"Chances restantes: {chances}")
+  print(f"Letras citadas: {' '.join(letters)}")
   print("Adivinha a palavra abaixo:")
   print("\b")
   print(' '.join(hide_word))
   print("\b")
-  print("\b")
-  print(f"Chances restantes: {chances}")
-  print(f"Letras citadas: {' '.join(letters)}")
-  print("\b")
 
   if "_" not in hide_word:
     print("\bVocê venceu!")
+    break
+
+  if chances == 0:
+    print(f'\bVocê perdeu! A palavra era "{word.capitalize()}".')
     break
 
   letter = input("Informe uma letra: ").lower()
@@ -42,9 +46,5 @@ while True:
     chances -= 1
   
   letters.append(letter)
-
-  if chances == 0:
-    print("\bVocê perdeu!")
-    break
 
   clear_screen()
