@@ -1,12 +1,22 @@
-class Student():
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
+class Vehicle:
+  def __init__(self, model, year):
+    self.model = model
+    self.year = year
 
-  def matriculate(self):
-    print(f"{self.name} matriculado(a) com sucesso!")
+  def display_info(self):
+    return (f"{self.model}({self.year})")
 
-student = Student("Emanuel", "30")
-print(student.name)
-print(student.age)
-student.matriculate()
+class Car(Vehicle):
+  def __init__(self, model, year, test):
+    super().__init__(model, year)
+    self.test = test
+
+class Motorcycle(Vehicle):
+  pass
+
+car = Car("Toyota-Corolla", 2022, "Test")
+motorcycle = Motorcycle("Honda-CBR500R", 2023)
+
+print(car.display_info())
+print(car.test)
+print(motorcycle.display_info())
