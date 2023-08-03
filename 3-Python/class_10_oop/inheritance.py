@@ -1,22 +1,23 @@
-class Vehicle:
-  def __init__(self, model, year):
-    self.model = model
-    self.year = year
+class User:
+  def __init__(self, name, email):
+    self.name = name
+    self.email = email
 
-  def display_info(self):
-    return (f"{self.model}({self.year})")
+  def info(self):
+    return (f"User: {self.name} E-mail:{self.email}")
 
-class Car(Vehicle):
-  def __init__(self, model, year, test):
-    super().__init__(model, year)
-    self.test = test
+user = User("Emanuel Quintino", "emanuelquintino@gmail.com")
+print(user.name)
+print(user.email)
+print(user.info())
 
-class Motorcycle(Vehicle):
-  pass
+class Admin(User):
+  def __init__(self, name, email, status):
+    super().__init__(name, email)
+    self.status = status
 
-car = Car("Toyota-Corolla", 2022, "Test")
-motorcycle = Motorcycle("Honda-CBR500R", 2023)
-
-print(car.display_info())
-print(car.test)
-print(motorcycle.display_info())
+admin = Admin("Emanuel Quintino", "emanuelquintino@gmail,com", "Master")
+print(admin.name)
+print(admin.email)
+print(admin.info())
+print(admin.status)

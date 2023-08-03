@@ -1,12 +1,15 @@
-class Student:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
+class Car:
+  def __init__(self, brand, model, year):
+    self.brand = brand
+    self.model = model
+    self.year = year
 
-  def matriculate(self):
-    print(f"{self.name} matriculado(a) com sucesso!")
+  def display_info(self):
+    return (f"{self.model} {self.year} ({self.brand})")
 
-student = Student("Emanuel", "30")
-print(student.name)
-print(student.age)
-student.matriculate()
+car = Car("Toyota", "Corolla", 2023)
+
+print(car.brand)
+print(car.model)
+print(car.year)
+print(car.display_info())
