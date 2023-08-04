@@ -4,7 +4,7 @@ class Car:
     self.model = model
     self.year = year
 
-  def display_info(self):
+  def info(self):
     return (f"{self.model} {self.year} ({self.brand})")
 
 car = Car("Toyota", "Corolla", 2023)
@@ -12,4 +12,4 @@ car = Car("Toyota", "Corolla", 2023)
 print(car.brand)
 print(car.model)
 print(car.year)
-print(car.display_info())
+print(car.info())
