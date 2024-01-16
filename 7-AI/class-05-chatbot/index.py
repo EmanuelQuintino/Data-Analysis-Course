@@ -1,11 +1,9 @@
 from openai import OpenAI
 from api_key import API_KEY
 
-client = OpenAI(api_key=API_KEY)
-
-def send_message(message, array_messages=[]):  
-  array_messages.append({"role": "user", "content": message})
-
+def send_message(array_messages=[]):  
+  client = OpenAI(api_key=API_KEY)
+  
   stream = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=array_messages,
@@ -20,15 +18,17 @@ def send_message(message, array_messages=[]):
   return response
   
 print("\nBem-vindo ao Chat do Reprograma Jucás!")
-print("\nDigite 'sair' para encerrar o chat")
+print('\nDigite "sair" para encerrar o chat')
 
 array_messages = []
 while True:
-  message = input("\nYou: ")
+  message = input("\033[4m\nYou\033[0m: ")
+  array_messages.append({"role": "user", "content": message})
+
   if message.lower() == "sair":
-    print("\nChatbot: Obrigado, volte sempre que desejar!")
+    print("\033[4m\nChatbot\033[0m: Obrigado, volte sempre que desejar!\n")
     break
 
-  response = send_message(message)
+  response = send_message(array_messages)
   array_messages.append({"role": "assistant", "content": response})
   print(f"\nChatbot: {response}")
