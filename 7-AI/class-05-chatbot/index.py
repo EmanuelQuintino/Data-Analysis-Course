@@ -1,5 +1,5 @@
 from openai import OpenAI
-from api_key import API_KEY
+from _api_key import API_KEY
 
 def send_message(array_messages=[]):  
   client = OpenAI(api_key=API_KEY)
