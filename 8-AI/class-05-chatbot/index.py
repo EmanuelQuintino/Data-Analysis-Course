@@ -1,5 +1,7 @@
 from openai import OpenAI
 from _api_key import API_KEY
+import speech_recognition as sr
+import pyttsx3
 
 def send_message(array_messages=[]):  
   client = OpenAI(api_key=API_KEY)
@@ -16,19 +18,59 @@ def send_message(array_messages=[]):
       response += chunk.choices[0].delta.content
   
   return response
-  
-print("\nBem-vindo ao Chat do Reprograma Jucás!")
-print('\nDigite "sair" para encerrar o chat')
+
+def user_speech_recognition():
+  recognizer = sr.Recognizer()
+  with sr.Microphone() as source:
+    print("Escutando...\n")
+    recognizer.adjust_for_ambient_noise(source)
+    audio = recognizer.listen(source)
+
+    try:
+      texto = recognizer.recognize_google(audio, language="pt-BR")
+      return texto
+    except sr.UnknownValueError:
+      if countNotTalk == 0:
+        print(f"\033[4mChatbot\033[0m: Não entendi o que falou, por favor fale novamente!\n")
+    except sr.RequestError as error:
+      print("Erro ao solicitar resultados: {0}\n".format(error))
+
+def talk(text):
+  engine = pyttsx3.init()
+  engine.setProperty("rate", 230)
+  engine.setProperty("volume", 1)
+  engine.say(text)
+  engine.runAndWait()
+
+print("\nBem-vindo(a) à Assistente Virtual do Reprograma Jucás!\n")
+print("Sobre o que deseja falar?\n")
+
+talk("Bem-vindo(a) à Assistente Virtual do Reprograma Jucás!")
+talk("Sobre o que deseja falar?")
 
 array_messages = []
+countNotTalk = 0
 while True:
-  message = input("\033[4m\nYou\033[0m: ")
-  array_messages.append({"role": "user", "content": message})
+  message = user_speech_recognition()
 
-  if message.lower() == "sair":
-    print("\033[4m\nChatbot\033[0m: Obrigado, volte sempre que desejar!\n")
-    break
+  if message:
+    countNotTalk = 0
+    print(f"\033[4mYou\033[0m: {message.capitalize()}\n")
+    array_messages.append({"role": "user", "content": message})
+    
+    if message == "sair" or message == "parar" or message == "encerrar" or message == "obrigado":
+      break
+    else:
+      response = send_message(array_messages)
+      array_messages.append({"role": "assistant", "content": response})
+      print(f"\033[4mChatbot\033[0m: {response}\n") 
+      talk(response)
+  else:
+    if countNotTalk >= 1: 
+      break
+    
+    talk("Não entendi o que falou, por favor fale novamente!")
+    countNotTalk += 1
 
-  response = send_message(array_messages)
-  array_messages.append({"role": "assistant", "content": response})
-  print(f"\nChatbot: {response}")
+print("\033[4mChatbot\033[0m: Obrigado, volte sempre!\n")
+talk("Obrigado, volte sempre!")
