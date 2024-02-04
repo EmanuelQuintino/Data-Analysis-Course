@@ -31,6 +31,7 @@ while True:
       count_fingers = 0
       
       if points:
+        # left hand
         if array_points[4][0] < array_points[2][0]:
           count_fingers +=1
 
