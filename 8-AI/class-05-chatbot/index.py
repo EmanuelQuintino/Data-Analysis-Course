@@ -37,7 +37,7 @@ def user_speech_recognition():
 
 def talk(text):
   engine = pyttsx3.init()
-  engine.setProperty("rate", 230)
+  engine.setProperty("rate", 250)
   engine.setProperty("volume", 1)
   engine.say(text)
   engine.runAndWait()
@@ -56,7 +56,7 @@ while True:
   if message:
     countNotTalk = 0
     print(f"\033[4mYou\033[0m: {message.capitalize()}\n")
-    array_messages.append({"role": "user", "content": message})
+    array_messages.append({"role": "user", "content": "Seja breve na resposta:" + message})
     
     if message == "sair" or message == "parar" or message == "encerrar" or message == "obrigado":
       break
@@ -66,7 +66,7 @@ while True:
       print(f"\033[4mChatbot\033[0m: {response}\n") 
       talk(response)
   else:
-    if countNotTalk >= 1: 
+    if countNotTalk >= 2: 
       break
     
     talk("Não entendi o que falou, por favor fale novamente!")
