@@ -46,12 +46,14 @@ is_admin = True #boolean
 
 list = ["string", 2, True, [2, "Três"]]
 #           0      1    2         3
+#          -4     -3   -2        -1
 
 # print(list[0])
 # print(list[-2])
-# print(list[3][1])
+# print(list[-1][1])
 
 list[2] = False
+list[-1][0] = "D"
 
 # print(list)
 # print(len(list))
