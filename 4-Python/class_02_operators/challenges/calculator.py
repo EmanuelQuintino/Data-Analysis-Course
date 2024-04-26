@@ -1,22 +1,20 @@
-num1 = float(input("Digite o primeiro número: "))
-num2 = float(input("Digite o segundo número: "))
-operation = input("Digite a operação (+, -, /, *): ")
+# Capture dois números do usuário
+# Faça as 4 operações (+, -, *, /) e atribua a variáveis semanticas
+# Imprima na tela os dois números com operações e resultado
 
-if operation == "+":
-  result = num1 + num2
-  print(f"A soma de {num1} e {num2} é {result}")
+num1 = float(input("Digite um número: "))
+num2 = float(input("Digite outro número: "))
 
-elif operation == "-":
-  result = num1 - num2
-  print(f"A subtração de {num1} e {num2} é {result}")
+print(type(num1))
 
-elif operation == "*":
-  result = num1 * num2
-  print(f"A multiplicação de {num1} e {num2} é {result}")
+add = num1 + num2
+sub = num1 - num2
+mul = num1 * num2
+div = num1 / num2
 
-elif operation == "/":
-  result = num1 / num2
-  print(f"A divisão de {num1} e {num2} é {result:.2f}")
-
-else:
-  print("Operação inválida!")
+print(f'''
+  {num1} + {num2} = {add}
+  {num1} - {num2} = {sub}
+  {num1} * {num2} = {mul}
+  {num1} / {num2} = {div:.2f}
+''')
