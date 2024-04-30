@@ -1,31 +1,31 @@
 # conditionals
 
 age = 18
-# age = int(input("Digite sua idade: "))
-
 has_cnh = True
 
 if age >= 18 and has_cnh:
-  print("pode dirigir")
+  print("can drive")
 else:
-  print("não pode dirigir")
+  print("can't drive")
 
-if age < 16:
-  print("não pode votar")
-elif age >= 16 and age < 18 or age > 70:
-  print("voto facultativo")
-elif age >= 18 and age <= 70:
-  print("voto obrigatório")
+if age >= 18 and age <= 70:
+  print("vote required")
+elif age < 16:
+  print("can't vote")
+else:
+  print("optional vote")
+
+# print(2/0)
 
 try:
-  num1 = float(input("Número 1: "))
-  num2 = float(input("Número 2: "))
-  print(num1/num2)
+  print(2/"a")
 except ValueError:
-  print("insira um valor válido!")
+  print("invalid value!")
 except ZeroDivisionError:
-  print("número não pode ser dividido por zero")
+  print("cannot divided by zero!")
 except:
-  print("erro na operação...")
+  print("error!")
 finally:
-  print("fim da operação!")
+  print("end of operation!")
+
+print("running...")

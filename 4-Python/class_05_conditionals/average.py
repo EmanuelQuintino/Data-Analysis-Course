@@ -1,11 +1,23 @@
-# sabendo que a média do colégio é 7, crie um programa que receba as notas do aluno e verifique se foi aprovado ou reprovado
+# Crie um programa que receba duas notas do aluno
+# Faça uma função que calcule a sua média
+# Apresente na tela SE o aluno foi aprovado (média 7)
+# Trate os possíveis error na aplicação
 
-grade1 = float(input("nota 1: "))
-grade2 = float(input("nota 2: "))
+def calc_avg(grade1, grade2):
+  return (grade1 + grade2) / 2 
 
-avg = (grade1 + grade2) / 2
+try:
+  student_grade1 = float(input("Nota 1: "))
+  student_grade2 = float(input("Nota 2: "))
 
-if avg >= 7:
-  print(f"aluno aprovado com média {avg}")
-else:
-  print(f"aluno reprovado com média {avg:.2f}")
+  avg = round(calc_avg(student_grade1, student_grade2), 1)
+
+  if avg >= 7:
+    print(f"Aprovado com {avg}")
+  else:
+    print(f"Reprovado com {avg}")
+    
+except ValueError:
+  print("Valor inválido!")
+except:
+  print("Erro operação!")
