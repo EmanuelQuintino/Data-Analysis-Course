@@ -1,4 +1,4 @@
-import math
+# operators
 
 num1 = 3
 num2 = 2
@@ -17,7 +17,7 @@ print(num3 ** (1/2))
 
 print(pow(num1, num2))
 print(abs(num3))
-print(round(num3))
+print(round(num3, 2))
 
 print((num1 + num2) * num3)
 
