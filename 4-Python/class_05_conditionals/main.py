@@ -24,8 +24,8 @@ except ValueError:
 except ZeroDivisionError:
   print("cannot divided by zero!")
 except:
-  print("error!")
+  print("application error!")
 finally:
-  print("end of operation!")
+  print("end operation!")
 
 print("running...")
