@@ -1,72 +1,34 @@
+import os
+
+os.remove("4-Python/class_09_file_manipulation/files/file.txt")
+
+# "x" - create
 # "r" - read
 # "w" - write
+# "r+" - create
 # "a" - append
 
-file = open("3-Python/files/object_list.txt", "r", encoding='utf-8')
-# file2 = open("3-Python/files/object_list2.txt", "w", encoding='utf-8')
-# file2 = open("3-Python/files/object_list2.txt", "a", encoding='utf-8')
+try:
+  file = open("file.txt", "r")
+  content = file.read()
+  file.close()
+except FileNotFoundError:
+    print("O arquivo não foi encontrado.")
 
-with open("3-Python/files/object_list.txt", "r", encoding='utf-8') as file:
-  print(file.read())
+with open("4-Python/class_09_file_manipulation/files/films.txt", "r+", encoding='utf-8') as films:
+  print(films.read())
+  print(films.tell())
 
-# print(file.read())
-# print(file.tell())
-# print(file.readline())
+  films.write("Transformers\n")
+  films.seek(0)
+  print(films.read())
+  
+  films.seek(0)
+  print(films.readline(6))
 
-# file.seek(0)
-# list = file.readlines()
-# print(list)
+  films.seek(0)
+  list_films = films.readlines()
 
-# for i in list:
-#   print(i.upper())
-#   file2.write(f"{i.upper()}")
-
-# file.write("avião\n")
-# file2.write("avião\n")
-# file2.write("bola\n")
-
-# # file2 = open("3-Python/files/object_list.txt", "w", encoding='utf-8')
-# item = "bola"
-# new_list = []
-# for i in list:
-#   if i.strip() != item:
-#     new_list.append(i)
-#     file2.write(i)
-
-# print(new_list)
-
-# file.close()
-# file2.close()
-
-# import os
-# os.remove("3-Python/files/object_list2.txt")
-
-# Exercise
-# employees = open("3-Python/files/employee_salaries.csv", "r", encoding='utf-8')
-
-# dataset = employees.read()
-
-# print(dataset)
-
-# rows = dataset.split("\n")
-# print(rows)
-
-# arrayEmployees = []
-
-# for row in rows:
-  # split_row = row.split(",")
-  # arrayEmployees.append(split_row)
-
-# print(arrayEmployees)
-# print(len(arrayEmployees))
-# print(len(arrayEmployees[0]))
-
-# employees.close()
-
-# import pandas as pd
-
-# employees = "3-Python/files/employee_salaries.csv"
-# dataset = pd.read_csv(employees)
-
-# print(dataset)
-# print(dataset.info())
+  for film in list_films:
+    print(film.upper())
+    
