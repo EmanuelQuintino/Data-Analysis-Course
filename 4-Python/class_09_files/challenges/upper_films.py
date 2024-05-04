@@ -3,11 +3,11 @@
 # Escreva (write) os nomes em um novo arquivo
 
 try:
-  with open("4-Python/class_09_file_manipulation/files/films.txt", "r", encoding="utf-8") as films, \
-       open("4-Python/class_09_file_manipulation/files/file.txt", "w", encoding="utf-8") as file:
+  with open("4-Python/class_09_files/files/films.txt", "r", encoding="utf-8") as films, \
+       open("4-Python/class_09_files/files/upper_films.txt", "w", encoding="utf-8") as upper_films:
 
     for film in films:
-      file.write(film.upper())
+      upper_films.write(film.upper())
 
 except FileNotFoundError:
   print("arquivo não encontrado!")
