@@ -1,4 +1,4 @@
-# Map
+# map
 
 def pow(num):
   return num ** 2

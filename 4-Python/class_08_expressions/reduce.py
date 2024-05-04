@@ -1,4 +1,4 @@
-# Reduce
+# reduce
 
 from functools import reduce
 

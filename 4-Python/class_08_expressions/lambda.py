@@ -1,4 +1,4 @@
-# Lambda
+# lambda
 
 sqr2 = lambda x: x ** 2
 oprSum = lambda x, y: x + y

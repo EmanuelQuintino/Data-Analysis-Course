@@ -1,4 +1,4 @@
-# Enumerate
+# enumerate
 
 array = ["A", "B", "C"]
 

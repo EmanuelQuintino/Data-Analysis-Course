@@ -1,4 +1,4 @@
-# Filter
+# filter
 
 def is_adult(student):
   if student["age"] >= 18:
