@@ -13,7 +13,7 @@ data = [
 
 # print(json.dumps(data, ensure_ascii=False))
 
-file_path = "3-Python/files/students.json"
+file_path = "4-Python/class_09_file_manipulation/files/students.json"
 with open(file_path, "w", newline="\n", encoding="utf-8") as file:
   writer = file.write(json.dumps(data, ensure_ascii=False))
 

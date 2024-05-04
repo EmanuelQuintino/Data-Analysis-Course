@@ -1,22 +1,22 @@
 import os
 
-os.remove("4-Python/class_09_file_manipulation/files/file.txt")
-
 # "x"  - create
 # "r"  - read
 # "w"  - write
 # "r+" - create
 # "a"  - append
 
+path_file_films = "4-Python/class_09_file_manipulation/files/films.txt"
+
 try:
-  file = open("file.txt", "r")
+  file = open(path_file_films, "r")
   content = file.read()
   file.close()
 except FileNotFoundError:
   print("arquivo não encontrado!")
 
 try:
-  with open("4-Python/class_09_file_manipulation/files/films.txt", "r+", encoding='utf-8') as films:
+  with open(path_file_films, "r+", encoding='utf-8') as films:
     print(films.read())
     print(films.tell())
 
@@ -36,3 +36,4 @@ try:
 except FileNotFoundError:
   print("O arquivo não encontrado!")
     
+os.remove(path_file_films)

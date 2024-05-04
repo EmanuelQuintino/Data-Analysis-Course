@@ -8,7 +8,7 @@ data = [
   ["Ana", 28, "Brasília"],
 ]
 
-file_path = "3-Python/files/students.csv"
+file_path = "4-Python/class_09_file_manipulation/files/students.csv"
 with open(file_path, "w", newline="\n", encoding="utf-8") as file:
   writer = csv.writer(file)
   for row in data:

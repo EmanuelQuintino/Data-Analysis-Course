@@ -1,5 +1,0 @@
-carro
-casa
-pião
-dado
-bola

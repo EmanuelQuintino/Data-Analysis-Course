@@ -2,9 +2,12 @@
 # Passe os nomes do array para caixa alta
 # Escreva (write) os nomes em um novo arquivo
 
+path_file_films = "4-Python/class_09_files/files/films.txt"
+path_file_upper_films = "4-Python/class_09_files/files/upper_films.txt"
+
 try:
-  with open("4-Python/class_09_files/files/films.txt", "r", encoding="utf-8") as films, \
-       open("4-Python/class_09_files/files/upper_films.txt", "w", encoding="utf-8") as upper_films:
+  with open(path_file_films, "r", encoding="utf-8") as films, \
+       open(path_file_upper_films, "w", encoding="utf-8") as upper_films:
 
     for film in films:
       upper_films.write(film.upper())
