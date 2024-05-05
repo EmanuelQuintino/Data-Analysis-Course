@@ -21,9 +21,9 @@ print(end_time - start_time)
 #     continue
 #   print(i)
 
-# i = 1
+# i = 0
 # while i <= len(array_numbers):
-#   print(array_numbers[i - 1])
+#   print(array_numbers[i])
 #   i += 1
 
 for i in range(1, 10, 2):
@@ -37,6 +37,7 @@ for i in range(1, 10, 2):
 #   print(i)
 
 # list_names = ["Pedro", "João", "Carla", "Clara"]
+
 # for name in list_names:
 #   print(name)
 

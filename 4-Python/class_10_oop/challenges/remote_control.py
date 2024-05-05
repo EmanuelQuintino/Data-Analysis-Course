@@ -28,7 +28,7 @@ class RemoteControl:
 
 control = RemoteControl()
 print(control.get_volume()) 
-print(control.get_channel()) 
-print(control.set_upper_channel()) 
-print(control.set_upper_channel()) 
-print(control.set_upper_channel()) 
+print(control.get_channel())
+
+for i in range(1, 5):
+  print(control.set_upper_channel())   
