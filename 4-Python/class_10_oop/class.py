@@ -5,8 +5,8 @@ class Car:
     self.year = year
 
   def info(self):
-    return (f"{self.model} {self.year} ({self.brand})")
-
+    return self.model, self.year, self.brand
+  
 car = Car("Toyota", "Corolla", 2023)
 
 print(car.brand)

@@ -6,7 +6,6 @@ class User:
   def info(self):
     return self.name, self.__cpf
   
-
 user = User("Emanuel Quintino", "123.123.123-12")
 
 print(user.name)
