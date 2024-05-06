@@ -46,12 +46,14 @@ class BankAccount:
   def deposit(self, amount):
     self.__balance += amount
     self.__save_transactions("deposito(+)", amount)
+    self.__transactions.append(("deposito(+)", amount))
     print(f"Novo depósito de {amount} com saldo de {self.__balance}")
 
   def withdraw(self, amount):
     if amount <= self.__balance:
       self.__balance -= amount
       self.__save_transactions("saque(-)", amount)
+      self.__transactions.append(("saque(-)", amount))
       print(f"Novo saque de {amount} com saldo de {self.__balance}")
     else:
       print("Saldo insuficiente!")
