@@ -9,7 +9,8 @@ class User:
 user = User("Emanuel Quintino", "123.123.123-12")
 
 print(user.name)
-# print(user.cpf) # error
+# user.cpf = "xxxx"
+# print(user.__cpf) # error
 print(user.info())
 print(user.name)
 user.info = "changed"
