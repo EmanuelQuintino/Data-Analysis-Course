@@ -1,15 +1,26 @@
 class Car:
-  def __init__(self, brand, model, year):
+  def __init__(self, brand, model, year, fipe):
     self.brand = brand
     self.model = model
     self.year = year
-
-  def info(self):
-    return self.model, self.year, self.brand
+    self.fipe = fipe
   
-car = Car("Toyota", "Corolla", 2023)
+  def info(self):
+    return (self.brand, self.model, self.year, self.fipe)
+  
+  def sale(self, offer):
+    if offer >= self.fipe:
+      return "Carro vendido!"
+    else:
+      return "Não vendido!"
 
-print(car.brand)
-print(car.model)
-print(car.year)
-print(car.info())
+car1 = Car("Toyota", "SW4", "2024", 345000)
+car2 = Car("Chevrolet", "Celta", "2006", 16500)
+
+print(car1.brand)
+print(car1.model)
+print(car1.year)
+
+print(car2.brand)
+print(car2.info())
+print(car2.sale(15000))
