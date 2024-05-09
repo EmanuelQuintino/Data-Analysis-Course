@@ -1,4 +1,4 @@
-class BankAccount:
+class Bank_account:
   def __init__(self, balance = 0):
     self.__balance = balance
     self.__initial_balance = balance
@@ -20,7 +20,7 @@ class BankAccount:
           
           self.__transactions.append((transaction, amount))
     
-    except FileNotFoundError:
+    except:
       print("arquivo não encontrado!")
       pass
     
@@ -39,7 +39,7 @@ class BankAccount:
     try:
       with open(self.__file_path, "a") as file:
         file.write(f"{transaction}, {amount}\n")
-    except FileNotFoundError:
+    except:
       print("arquivo não encontrado!")
       pass
 
@@ -47,7 +47,7 @@ class BankAccount:
     self.__balance += amount
     self.__save_transactions("deposito(+)", amount)
     self.__transactions.append(("deposito(+)", amount))
-    print(f"Novo depósito de {amount} com saldo de {self.__balance}")
+    print(f"Novo depósito de R${amount} com saldo de {self.__balance}")
 
   def withdraw(self, amount):
     if amount <= self.__balance:
@@ -58,25 +58,26 @@ class BankAccount:
     else:
       print("Saldo insuficiente!")
 
-account = BankAccount()
-waiting_for_input = False
+account = Bank_account()
+waiting_menu = False # flag
 
 while True:
-  if waiting_for_input == True:
+  if waiting_menu == True:
     input("\nPressione Enter para continuar...")
+
   
-  # print('\033[H\033[J') # terminal clear
-  waiting_for_input = True
+  print('\033[H\033[J') # terminal clear
+  waiting_menu = True
 
   print('''
-===== Bank Account =====
+=== Automated Teller Machine ===
   
   [1] Ver extrato
   [2] Fazer depósito
   [3] Fazer saque
   [4] Sair
       
-========================  
+================================  
   ''')
 
   option = input("\bEscolha uma opção: ")
