@@ -1,7 +1,6 @@
 class Bank_account:
   def __init__(self, balance = 0):
     self.__balance = balance
-    self.__initial_balance = balance
     self.__file_path = "4-Python/class_10_oop/challenges/files/transactions.txt"
     self.__transactions = []
     self.__load_transactions()
@@ -23,18 +22,7 @@ class Bank_account:
     except:
       print("arquivo não encontrado!")
       pass
-    
-  def check_statement(self):  
-    print("=== Extrato Bancário ===")
 
-    print("\nsaldo(=):", self.__initial_balance)
-    
-    for value in self.__transactions:
-      print(f"{value[0]}: {value[1]}")
-
-    print("_________________")
-    print("saldo(=):", self.__balance)
-  
   def __save_transactions(self, transaction, amount):
     try:
       with open(self.__file_path, "a") as file:
@@ -43,18 +31,31 @@ class Bank_account:
       print("arquivo não encontrado!")
       pass
 
+  def check_statement(self):  
+    print("=== Extrato Bancário ===\n")
+    
+    for value in self.__transactions:
+      print(f"{value[0]:>11}: {value[1]:>11.2f}")
+
+    print("\n========================")
+    print(f"{'saldo(=)':>11}: {self.__balance:>11.2f}")
+    print("========================")
+  
   def deposit(self, amount):
     self.__balance += amount
     self.__save_transactions("deposito(+)", amount)
     self.__transactions.append(("deposito(+)", amount))
-    print(f"Novo depósito de R${amount} com saldo de {self.__balance}")
+    print(f"Novo depósito de R${amount:.2f}!")
 
   def withdraw(self, amount):
+    if amount == 0:
+      return print("Saque deve ser maior que zero!")
+    
     if amount <= self.__balance:
       self.__balance -= amount
       self.__save_transactions("saque(-)", amount)
       self.__transactions.append(("saque(-)", amount))
-      print(f"Novo saque de {amount} com saldo de {self.__balance}")
+      print(f"Novo saque de R${amount:.2f}!")
     else:
       print("Saldo insuficiente!")
 
@@ -65,8 +66,8 @@ while True:
   if waiting_menu == True:
     input("\nPressione Enter para continuar...")
 
-  
-  print('\033[H\033[J') # terminal clear
+  # print('\033[H\033[J') # terminal clear
+  print("\033c", end="") # terminal clear
   waiting_menu = True
 
   print('''
@@ -87,10 +88,10 @@ while True:
   if option == "1":
     account.check_statement()
   elif option == "2":
-    amount = float(input("Digite o valor do depósito: "))
+    amount = float(input("Digite o valor do depósito: R$"))
     account.deposit(amount)
   elif option == "3":
-    amount = float(input("Digite o valor do saque: "))
+    amount = float(input("Digite o valor do saque: R$"))
     account.withdraw(amount)
   elif option == "4":
     print("Programa encerrado!\n")
