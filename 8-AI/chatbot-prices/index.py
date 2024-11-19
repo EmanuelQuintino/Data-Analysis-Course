@@ -38,11 +38,13 @@ def search_response(message):
             if any(tag in message for tag in product['tags']):
                 return f"{product['descricao']}."
             
+    if any(keyword in message for keyword in ["nome da loja", "sobre a loja", "loja", "sobre a zenir", "zenir", "zeni"]):
+        return "Nós somos a Zenir, temos 62 lojas em todo estado do Ceará e a 32 anos estamos trabalhando para melhor atendê-lo!"
+    
     if any(keyword in message for keyword in ["chamar vendedor", "falar com vendedor", "quero falar com vendedor", "vendedor", "ajuda", "chame", "chamar", "falar", "falo", "ajude", "ajudante", "atendente"]):
         return "Chamando um de nossos vendedores para te atender..."
-
+    
     return "Posso te ajudar com preço e descrição. Se quiser saber mais irei chamar um de nossos vendedores para melhor te atender."
-
 
 while True:
     user_message = user_speech_recognition()
