@@ -28,15 +28,18 @@ def search_response(message):
     if any(greeting in message for greeting in ["olá", "oi", "bom dia", "boa tarde", "boa noite"]):
         return "Olá, tudo bem? Por favor, fale o nome do produto para saber preço ou descrição."
 
-    if "preço" in message:
+    if any(keyword in message for keyword in ["preço", "custo", "custa"]):
         for product in products:
             if any(tag in message for tag in product['tags']):
                 return f"O preço d{product['genero']} {product['name']} é {product['preço']} reais."
 
-    if any(keyword in message for keyword in ["descrição", "mais sobre", "me conte", "saber mais"]):
+    if any(keyword in message for keyword in ["descrição", "mais sobre", "me conte", "me conte sobre", "saber mais", "fale sobre"]):
         for product in products:
             if any(tag in message for tag in product['tags']):
-                return f"A descrição d{product['genero']} {product['name']} é: {product['descricao']}."
+                return f"{product['descricao']}."
+            
+    if any(keyword in message for keyword in ["chamar vendedor", "falar com vendedor", "quero falar com vendedor", "vendedor", "ajuda", "chame", "chamar", "falar", "falo", "ajude", ]):
+        return "Chamando um de nossos vendedores para te atender..."
 
     return "Posso te ajudar com preço e descrição. Se quiser saber mais irei chamar um de nossos vendedores para melhor te atender."
 
@@ -45,7 +48,7 @@ while True:
     user_message = user_speech_recognition()
 
     if user_message:
-        print(f"Cliente: {user_message}")  
+        print(f"Cliente: {user_message.capitalize()}")  
 
         if any(keyword in user_message for keyword in ["sair", "parar", "encerrar", "obrigado"]):
             print("Zê: Obrigado, volte sempre!")
